@@ -1,18 +1,22 @@
 <!DOCTYPE html>
+
+{% load staticfiles %}
+
 <html>
 
 <head>
-    <title>Nombre del país</title>
+    <title>Welcome to Flag Challenge!</title>
 </head>
 
 <body>
-    <h1>Adivina cuál es esta bandera...</h1>
+    <h1>The Marvelous Flag Challenge!</h1>
+    
     <div>
-        Puntuación: <br />
-        <strong>{{ boldmessage }}</strong><br />
+        Try to beat the world record! <br/>
+        <a href="/names/">Start Game!</a>
     </div>
     <div>
-        <a href="/start/about/">About</a><br />
+        <a href="/start/about/">About</a><br/>
     </div>
 </body>
 

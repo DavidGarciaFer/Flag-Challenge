@@ -20,7 +20,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 
 # Path to our static library
-STATIC_DIR = os.path.join(BASE_DIR, 'static')
+CSS_DIR = os.path.join(BASE_DIR, 'css')
+FLAG_ICON_DIR = os.path.join(BASE_DIR, 'flags_pics')
 
 # Path to our dinamic media library
 MEDIA_DIR = os.path.join(BASE_DIR, 'media')
@@ -129,5 +130,5 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
-
+STATICFILES_DIRS = [CSS_DIR, FLAG_ICON_DIR, ]
 STATIC_URL = '/static/'

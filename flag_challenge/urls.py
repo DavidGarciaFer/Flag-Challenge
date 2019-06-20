@@ -22,6 +22,6 @@ from start import views as start_v
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', start_v.index, name='index'),
-    url(r'^names$', include('names.urls')),
-    url(r'^start$', include('start.urls')),
+    url(r'^names/', include('names.urls')),
+    url(r'^start/', include('start.urls')),
 ]
