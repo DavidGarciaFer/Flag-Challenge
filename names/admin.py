@@ -1,3 +1,4 @@
 from django.contrib import admin
+from names.models import Country
 
-# Register your models here.
+admin.site.register(Country)

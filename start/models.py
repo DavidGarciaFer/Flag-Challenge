@@ -2,16 +2,23 @@ from __future__ import unicode_literals
 
 from django.db import models
 
-class Country(models.Model):
-    c_id = models.CharField()
-    name_en = models.CharField(max_length=128)
-    name_es = models.CharField(max_length=128)
-    name_fr = models.CharField(max_length=128)
-    iso2 = models.CharField(max_length=2)
-    iso3 = models.CharField(max_length=3)
-
+class Player(models.Model):
+    name = models.CharField(max_length=10, unique=True)
+    password = models.CharField(max_length=10)
+    
     def __str__(self):
-        return self.iso2
+        return self.name
 
     def __unicode__(self):
-        return self.iso2
+        return self.name
+
+class Record(models.Model):
+    player = models.ForeignKey(Player)
+    points = models.IntegerField(default=0)
+    date = models.DateField()
+
+    def __str__(self):
+        return self.player.name + ': ' + str(self.points)
+    
+    def __unicode__(self):
+        return self.player.name + ': ' + str(self.points)
