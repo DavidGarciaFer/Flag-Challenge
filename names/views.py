@@ -16,5 +16,8 @@ def prueba(n):
     return ret
 
 def index(request):
-    context_dict = {'boldmessage': "Probando, probando, tres, cuatro.", 'list': prueba(1)}
+    if len(request.session['game']) > 0:
+        country = request.session['game'][0]
+        request.session['game'] = request.session['game'][1:]
+    context_dict = {'boldmessage': "Probando, probando, tres, cuatro.", 'country': country}
     return render(request, 'names/flag.html', context=context_dict)

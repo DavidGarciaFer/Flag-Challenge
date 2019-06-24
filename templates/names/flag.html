@@ -10,23 +10,16 @@
 
 <body>
     <h1>Guess the Flag...</h1>
+    <h2>{{ country }}</h2>
     <div>
-        {% if list %}
-        <ul>
-            {% for country in list %} 
-            <img style="display: block; max-width:230px; max-height:95px; width: auto; height: auto;" src="{% static country  %}">
-            {% endfor %}
-        </ul>
-        {% else %}
-        No hay paises que mostrar
-        {% endif %}
+        
         <form>
             <input type="text" name="country">
             <input type="submit" name="submit"><br>
         </form>
     </div>
     <div>
-        <a href="/start/about/">Exit</a><br/>
+        <a  href="/start/about/">Exit</a><br/>
     </div>
 </body>
 
